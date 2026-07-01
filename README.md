@@ -1,6 +1,6 @@
 # mSCoRe
 
-Benchmark and evaluation code for **"mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning"** (LREC-COLING 2026).
+Benchmark and evaluation code for **"mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning"** (LREC 2026).
 
 [Paper](https://doi.org/10.63317/5kajwk9dj3j9) &nbsp;|&nbsp; [🤗 Dataset](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
 
@@ -11,7 +11,7 @@ mSCoRe evaluates LLMs' commonsense reasoning across **5 languages** and **10 rea
 - **mSCoRe-G** — General commonsense reasoning (English, German, French, Chinese, Japanese), built on mCSQA.
 - **mSCoRe-S** — Social/cultural commonsense reasoning, built on CultureBank (TikTok + Reddit sources).
 
-Each question is a multiple-choice commonsense problem with structured atomic reasoning steps, where each step is labeled with a specific reasoning skill. Complexity scales from level 0 (original) to level 6 through context expansion, option adjustment, and commonsense implicitation.
+Each question is a multiple-choice commonsense problem with structured atomic reasoning steps, where each step is labeled with a specific reasoning skill. Complexity scales from L0 (original) to L3 through a 4-stage pipeline: seed data filtering → structured reasoning generation → complexity expansion (context + options + reasoning refinement) → commonsense implicitation. The framework supports scaling up to L6.
 
 **5,600 instances** total (4,000 general + 1,600 social) across 4 complexity levels in the main benchmark.
 
@@ -37,23 +37,7 @@ Available configs:
 
 Each config has 4 complexity levels (L0–L3), totaling 5,600 instances.
 
-## 📦 Dataset
 
-The mSCoRe benchmark is available on HuggingFace:
-
-[![HuggingFace Dataset](https://img.shields.io/badge/🤗_HuggingFace-mSCORE-yellow)](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
-
-```python
-from datasets import load_dataset
-
-# Load any language-level config
-# General: mcsqa-en, mcsqa-de, mcsqa-fr, mcsqa-zh, mcsqa-ja
-# Social: culturebank-tiktok, culturebank-reddit
-dataset = load_dataset("ngotrnghia1811/mSCORE", "mcsqa-en", split="mcsqa-en")
-print(dataset[0])
-```
-
-**5,600 instances** across 7 configs × 4 complexity levels (L0–L3). Each instance includes the question, answer, options, reasoning process, and reasoning skills used.
 
 ## Setup
 
@@ -148,9 +132,8 @@ mSCoRe/
                  Skill-based Commonsense Reasoning},
     author    = {Ngo, Nghia Trung and Dernoncourt, Franck and
                  Nguyen, Thien Huu},
-    booktitle = {Proceedings of the 2026 Joint International Conference
-                 on Computational Linguistics, Language Resources and
-                 Evaluation (LREC-COLING 2026)},
+    booktitle = {Proceedings of the Fifteenth Language Resources and
+                 Evaluation Conference (LREC 2026)},
     year      = {2026},
     pages     = {5095--5115},
     doi       = {10.63317/5kajwk9dj3j9},
