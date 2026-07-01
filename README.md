@@ -1,6 +1,6 @@
 # mSCoRe
 
-Benchmark and evaluation code for **"mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning"** (AAAI 2026).
+Benchmark and evaluation code for **"mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning"** (LREC-COLING 2026).
 
 [Paper](https://doi.org/10.63317/5kajwk9dj3j9) &nbsp;|&nbsp; [🤗 Dataset](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
 
