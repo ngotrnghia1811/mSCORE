@@ -37,6 +37,24 @@ Available configs:
 
 Each config has 4 complexity levels (L0–L3), totaling 5,600 instances.
 
+## 📦 Dataset
+
+The mSCoRe benchmark is available on HuggingFace:
+
+[![HuggingFace Dataset](https://img.shields.io/badge/🤗_HuggingFace-mSCORE-yellow)](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
+
+```python
+from datasets import load_dataset
+
+# Load any language-level config
+# General: mcsqa-en, mcsqa-de, mcsqa-fr, mcsqa-zh, mcsqa-ja
+# Social: culturebank-tiktok, culturebank-reddit
+dataset = load_dataset("ngotrnghia1811/mSCORE", "mcsqa-en", split="mcsqa-en")
+print(dataset[0])
+```
+
+**5,600 instances** across 7 configs × 4 complexity levels (L0–L3). Each instance includes the question, answer, options, reasoning process, and reasoning skills used.
+
 ## Setup
 
 ```bash
