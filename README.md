@@ -2,7 +2,7 @@
 
 Benchmark and evaluation code for **"mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning"** (AAAI 2026).
 
-[Paper][TODO: arxiv link] &nbsp;|&nbsp; [Data][TODO: HuggingFace link]
+[Paper](https://doi.org/10.63317/5kajwk9dj3j9) &nbsp;|&nbsp; [🤗 Dataset](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
 
 ## Overview
 
@@ -15,10 +15,32 @@ Each question is a multiple-choice commonsense problem with structured atomic re
 
 **5,600 instances** total (4,000 general + 1,600 social) across 4 complexity levels in the main benchmark.
 
+## 📦 Dataset
+
+The mSCoRe benchmark is available on HuggingFace:
+
+[![HuggingFace Dataset](https://img.shields.io/badge/🤗_HuggingFace-mSCORE-yellow)](https://huggingface.co/datasets/ngotrnghia1811/mSCORE)
+
+### Load the dataset
+
+```python
+from datasets import load_dataset
+
+# Load any language-level config combo
+dataset = load_dataset("ngotrnghia1811/mSCORE", "mcsqa-en", split="mcsqa-en")
+print(dataset[0])
+```
+
+Available configs:
+- General: `mcsqa-en`, `mcsqa-de`, `mcsqa-fr`, `mcsqa-zh`, `mcsqa-ja` 
+- Social: `culturebank-tiktok`, `culturebank-reddit`
+
+Each config has 4 complexity levels (L0–L3), totaling 5,600 instances.
+
 ## Setup
 
 ```bash
-git clone https://github.com/[TODO: username]/mSCoRe.git
+git clone https://github.com/ngotrnghia1811/mSCORE.git
 cd mSCoRe
 pip install -r requirements.txt
 ```
@@ -103,11 +125,17 @@ mSCoRe/
 ## Citation
 
 ```bibtex
-@inproceedings{mscore2026,
-    title={mSCoRe: a Multilingual and Scalable Benchmark for Skill-based Commonsense Reasoning},
-    author={[TODO: authors]},
-    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-    year={2026}
+@inproceedings{ngo2026mscore,
+    title     = {m{SCoRe}: a Multilingual and Scalable Benchmark for
+                 Skill-based Commonsense Reasoning},
+    author    = {Ngo, Nghia Trung and Dernoncourt, Franck and
+                 Nguyen, Thien Huu},
+    booktitle = {Proceedings of the 2026 Joint International Conference
+                 on Computational Linguistics, Language Resources and
+                 Evaluation (LREC-COLING 2026)},
+    year      = {2026},
+    pages     = {5095--5115},
+    doi       = {10.63317/5kajwk9dj3j9},
 }
 ```
 
